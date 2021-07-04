@@ -1,0 +1,10 @@
+[
+  {
+    "text": "no more doubts",
+    "intent": "no_more_doubts",
+    "intent_prediction": {
+      "name": "more_doubts",
+      "confidence": 0.5117055773735046
+    }
+  }
+]

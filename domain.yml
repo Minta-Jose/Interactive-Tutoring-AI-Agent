@@ -1,0 +1,608 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- topic_not_choosen:
+    use_entities: true
+- topic_choosen:
+    use_entities: true
+- trouble_to_choose:
+    use_entities: true
+- no_trouble:
+    use_entities: true
+- thanks:
+    use_entities: true
+- more_doubts:
+    use_entities: true
+- no_more_doubts:
+    use_entities: true
+- Literature_survey:
+    use_entities: true
+- Reference Citation:
+    use_entities: true
+- Report writing:
+    use_entities: true
+- Presentation:
+    use_entities: true
+- Topic_Related:
+    use_entities: true
+- other_faq:
+    use_entities: true
+- switch_topic:
+    use_entities: true
+- OwnTopic:
+    use_entities: true
+- register_subject:
+    use_entities: true
+- registered_subject:
+    use_entities: true
+- purpose_of_literature_survey:
+    use_entities: true
+- help_in_literature_survey:
+    use_entities: true
+- trustworthy_sites:
+    use_entities: true
+- reference_format:
+    use_entities: true
+- Forgot_citation:
+    use_entities: true
+- no_of_references:
+    use_entities: true
+- reference_necessary:
+    use_entities: true
+- ref_citation_purpose:
+    use_entities: true
+- for_any_other_questions:
+    use_entities: true
+- presentation_preparation:
+    use_entities: true
+- presentation_slot:
+    use_entities: true
+- presentation_content:
+    use_entities: true
+- presentation_date:
+    use_entities: true
+- presentation_upload:
+    use_entities: true
+- slides:
+    use_entities: true
+- template:
+    use_entities: true
+- samples:
+    use_entities: true
+- font:
+    use_entities: true
+- Spelling_errors:
+    use_entities: true
+- pages:
+    use_entities: true
+- report_preparation:
+    use_entities: true
+- Report_contents:
+    use_entities: true
+- report_date:
+    use_entities: true
+- HowToSubmitReport:
+    use_entities: true
+- title_info:
+    use_entities: true
+- sick_ppt:
+    use_entities: true
+- network_issue:
+    use_entities: true
+- seminar_withdraw:
+    use_entities: true
+- ReportStillPending:
+    use_entities: true
+- Seminar_Internship:
+    use_entities: true
+- enroll_filled:
+    use_entities: true
+- Repeat_Seminar:
+    use_entities: true
+- Attendance:
+    use_entities: true
+- Deregister:
+    use_entities: true
+- language:
+    use_entities: true
+- aboutbot:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- feedback:
+    use_entities: true
+- feedback_ppt:
+    use_entities: true
+- feedback_report:
+    use_entities: true
+- incomplete_qn:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- deadlines:
+    use_entities: true
+- None_of_these:
+    use_entities: true
+- compliment_bot:
+    use_entities: true
+- bot_feedback:
+    use_entities: true
+entities: []
+slots: {}
+responses:
+  utter_default:
+  - text: I'm sorry, I didn't get that. Could you rephrase?
+  utter_greet:
+  - text: |-
+      Hey! I am your Tutoring AI agent.
+      Nice to see you here!
+
+      How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: |-
+      Everything is going to turn out better than you expected.
+      Stay Happy and Be Positive!
+
+      Also, here is something to cheer you up:
+  utter_did_that_help:
+  - text: I hope this helped you a little.
+  utter_happy:
+  - text: Great!
+  utter_registration:
+  - buttons:
+    - payload: /registered_subject
+      title: Yes, I did
+    - payload: /register_subject
+      title: No, not yet
+    text: Did you enroll for the subject 'Hauptseminar'?
+  utter_any_doubts:
+  - buttons:
+    - payload: /more_doubts
+      title: Yes, I have
+    - payload: /no_more_doubts
+      title: No
+    text: Do you have any doubts about your subject 'Hauptseminar'?
+  utter_topic:
+  - buttons:
+    - payload: /topic_not_choosen
+      title: No, I haven't selected any topic
+    - payload: /topic_choosen
+      title: Yes, I have already choose a topic
+    text: Have you chose a topic for your Hauptseminar?
+  utter_doubtful_areas:
+  - buttons:
+    - payload: /Topic_Related
+      title: Topic Related
+    - payload: /Literature_survey
+      title: Literature Survey
+    - payload: /Reference Citation
+      title: Reference
+    - payload: /Presentation
+      title: Presentation
+    - payload: /Report writing
+      title: Report
+    - payload: /feedback
+      title: Feedback for Presentation or Report
+    - payload: /other_faq
+      title: Other Problems
+    text: In which area you have the query?
+  utter_choose_topic:
+  - buttons:
+    - payload: /trouble_to_choose
+      title: Yes, I am confused to choose which one
+    - payload: /no_trouble
+      title: I have other problem
+    text: Do you have any trouble in choosing a topic of your interest?
+  utter_interest_test:
+  - text: "Choose a topic that interests you, explore using journals, articles.. etc or in your Opal course do the Self-test in [here](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/101441278882002)."
+  utter_any_more_doubts:
+  - buttons:
+    - payload: /more_doubts
+      title: Yes, I have
+    - payload: /no_more_doubts
+      title: No, everything is clear
+    text: Do you have any other doubts to clear?
+  utter_post_your_question:
+  - text: Please write down your doubts here
+  utter_discuss_with_team:
+  - text: Sorry! I am not sure about the solution, please feel free to discuss this question with your team members.
+  utter_topic_related:
+  - buttons:
+    - payload: /switch_topic
+      title: Want to switch the topic?
+    - payload: /OwnTopic
+      title: Want to select a topic of your own?
+    - payload: /help_in_literature_survey
+      title: Need any help in doing your literature survey?
+    - payload: /other_faq
+      title: Have other doubts?
+    text: Please tell where you have the doubt? Do you...
+  utter_switch_topic:
+  - text: You are just allowed to switch your topic during the registration time, after that no switching is allowed!
+  utter_OwnTopic:
+  - text: |-
+      It is possible for select a topic by your own.
+
+      For this, write a proposal of minimum 1 page about your topic and provide high scientific starting literature (paper, journals, etc., minimum 5).
+
+      Also explain why your topic is important to discuss, what questions you want to solve and what your own contribution will be.
+  utter_register_subject:
+  - text: "Please enroll for the subject 'Hauptseminar' with this [link](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/82203525178937), before deadline and come back to me if you have further doubts in the subject."
+  utter_other_doubts:
+  - buttons:
+    - payload: /sick_ppt
+      title: If you are sick on or just before your presentation day?
+    - payload: /network_issue
+      title: If you face network issues during presentation?
+    - payload: /ReportStillPending
+      title: You did your presentation, but could not submit the report?
+    - payload: /seminar_withdraw
+      title: End the seminar during the semester?
+    - payload: /Seminar_Internship
+      title: To do the seminar during your internship?
+    - payload: /enroll_filled
+      title: Course registration is full?
+    - payload: /Repeat_Seminar
+      title: Repeat the subject again?
+    - payload: /Attendance
+      title: Attendance compulsory?
+    - payload: /Deregister
+      title: Want to do deregisteration, but registration is closed?
+    - payload: /None_of_these
+      title: None of these
+    text: Please tell, do you have any doubts from this areas?
+  utter_no_trouble:
+  - buttons:
+    - payload: /trustworthy_sites
+      title: Do you want to search for journals related to the topic?
+    - payload: /Presentation
+      title: Do you have any doubts in making presentation?
+    - payload: /Report writing
+      title: Do you have any doubts in writing report?
+    - payload: /deadlines
+      title: Do you want to know the important deadlines?
+    - payload: /more_doubts
+      title: None of these
+    text: Then please specify what is your doubt?
+  utter_literature_survey:
+  - buttons:
+    - payload: /purpose_of_literature_survey
+      title: What is the purpose of the literature survey?
+    - payload: /help_in_literature_survey
+      title: You need some help with a literature survey?
+    - payload: /trustworthy_sites
+      title: where to find good journals?
+    - payload: /Reference Citation
+      title: Doubt in reference area?
+    text: Please tell me what is your doubt in your literature survey?
+  utter_purpose_of_literature_survey:
+  - text: |-
+      It helps for understanding the existing researches and know about the area of study.
+
+      Also improves your knowledge in your respective topic.
+  utter_help_in_literature_survey:
+  - text: |-
+      I can only provide you some trustworthy sites to search for it. You should find and read the literatures regarding your topic by yourself.
+
+      If you want to know about the sites please ask for: trustworthy sites
+  utter_trustworthy_sites:
+  - text: "Please search and find literature regarding your topic in [IEEE Website](http://ieeexplore.ieee.org/Xplore/guesthome.jsp), [Google scholar](https://scholar.google.com/) sites and our University library - [online link](https://www.tu-chemnitz.de/ub/index.html.en)."
+  utter_reference:
+  - buttons:
+    - payload: /reference_necessary
+      title: Is citing reference mandatory?
+    - payload: /ref_citation_purpose
+      title: Why you should include references?
+    - payload: /reference_format
+      title: Is there any formatting of reference?
+    - payload: /no_of_references
+      title: No. of references included in ppt/report?
+    - payload: /Forgot_citation
+      title: What if you forgot to copy the reference citation?
+    text: Please tell me what is your doubt in references area?
+  utter_reference_format:
+  - text: "You can download and check the IEEE-Standard Style Guide for references from the university website [IEEE Reference Format Style Guide](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#downloads)."
+  utter_Forgot_citation:
+  - text: Copy your journal title and search it in the Google scholar.
+  utter_no_of_references:
+  - text: There is no limit, but you should add all the references from which you have borrowed ideas and words that are mentioned in your ppt/report.
+  utter_reference_necessary:
+  - text: Yes, you need to include references to images, tables, text etc. in both ppt and report.
+  utter_ref_citation_purpose:
+  - text: |-
+      Citing or documenting the sources used in your research paper have three purposes:
+
+        1)It gives proper credit to the authors of the words or ideas that you incorporated into your paper.
+
+        2)It allows those who are reading your work to locate your sources, in order to learn more about the ideas that you include in your paper.
+
+        3)Citing your sources consistently and accurately helps you avoid committing plagiarism in your writing.
+  utter_presentation:
+  - buttons:
+    - payload: /presentation_preparation
+      title: How to make a good presentation?
+    - payload: /presentation_slot
+      title: Reserve a presentation slot?
+    - payload: /presentation_content
+      title: Main contents in the presentation?
+    - payload: /presentation_date
+      title: Your presentation date?
+    - payload: /presentation_upload
+      title: Do you have to upload your ppt?
+    - payload: /slides
+      title: No. of slides for the presentation?
+    - payload: /template
+      title: Where to find template for presentation?
+    - payload: /samples
+      title: Where to find the sample presentation?
+    - payload: /font
+      title: Correct font size or other requirements for the ppt?
+    text: Please tell me what is your doubt in the presentation? You want to know about...
+  utter_good_presentation:
+  - text: |-
+      Keep it simple (avoid long sentences);
+
+      Limit the bullet points (maximum 6 in a slide);
+
+      Include appropriate charts and animations, etc;
+
+      Should be clear to the reader (texts, graphs, animations and your points).
+  utter_presentation_content:
+  - text: |-
+      Generally in a presentation you need to include;
+
+      Introduction, Motivation, State of the art, principle or working, conclusion, and references.
+  #      Check your with your team for more information.
+  utter_presentation_slot:
+  - text: |-
+      You cannot take a presentation slot of your own. The professor will assign the date and time for the students.
+
+      Here is the [link](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/93389955959771) to know your more details.
+  utter_presentation_date:
+  - text: |-
+      You will find the deadlines and all important dates in the OPAL Course at [Important Appointments](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/93389955959771)
+
+      You should give your presentation on the assigned date.
+  utter_presentation_upload:
+  - text: There is no need of uploading your presentation.
+  utter_slides:
+  - text: |-
+      It really depends on the time you are allowed and complexity of the information you are talking about.
+
+      Practice your presentation and try finishing it on time.
+  utter_report_writing:
+  - buttons:
+    - payload: /report_preparation
+      title: Some tips for making a good report?
+    - payload: /Report_contents
+      title: Main contents included in the report?
+    - payload: /template
+      title: Where to find template for report, Latex and Word format?
+    - payload: /report_date
+      title: Submission date of your report?
+    - payload: /HowToSubmitReport
+      title: How and where to submit the report?
+    - payload: /pages
+      title: No. of pages for the report?
+    - payload: /font
+      title: Correct font size or other requirements for the report?
+    text: Please tell me what is your doubt in making a report? You want to know about...
+  utter_report_preparation:
+  - text: |-
+      Keep it simple, short and to the point.
+
+      Never do Copy Paste!.
+
+      Write your text with your own words and reference the content!
+
+      An layout example report is [here](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/85620866361075)
+  utter_Report_contents:
+  - text: |-
+      Title page, table of contents, list of tables and figures, Introduction, etc.
+
+      Please check university website [Report template](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#templates) to get more information.
+  utter_report_date:
+  - text: Submit your report on the assigned date, you will find the deadlines and all important dates in the OPAL Course at [Important Appointments](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/93389955959771)
+  utter_HowToSubmitReport:
+  - text: |-
+      There are 3 points that you have to take care:-
+
+
+       1) Send the report to the correct email **ce-teaching@informatik.tu-chemnitz.de** address, before the deadline with the title 'Report submission Semester Year'(for example;Report submission SS2016).
+
+          You will get an automatically generated response, this shows you that the report was submitted!
+
+          It is not necessary to submit the report 2 times, just in case something went wrong!
+
+
+       2) Send the correct file format (as PDF file), we don't accept Word-files or Latex-Files.
+
+
+       3) The report has to be named correctly; 'your name_your Matrikel Number.pdf'(for example; albert_einstein_101020.pdf).
+
+          Please take care that you don't insert special character or whitespaces.
+  utter_pages:
+  - text: Your report should comprise 10 to 15 pages of content, without title page, table of contents, list of figures, references, etc.
+  utter_title_info:
+  - text: |-
+      Title page of report should include:
+
+      1) Title of your work
+
+      2) Supervisor name
+
+      3) Author name
+
+      4) Your Matriculation Number / Student ID
+
+      5) Date of submission
+
+      Check your [template](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#templates) and use it.
+  utter_template:
+  - text: Please use the template at our University website in this [Template link](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#templates)
+  utter_Spelling_errors:
+  - text: Your text should not have any spelling or grammar mistakes.
+  utter_samples:
+  - text: Here is the link for a layout [example](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/85620866361075).
+  utter_font:
+  - text: Please check requirements ppt in slides folder [Haupt Seminar](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135?4)
+  utter_sick:
+  - text: |-
+      If you are sick, first of all, write a mail to your course leader, ASAP (if possible 24 hour before)!
+
+      Then provide a medical certificate from a doctor in Chemnitz or near region (within 3 days).
+
+      If possible, your supervisor will give you a new presentation appointment.
+  utter_contact_supervisor:
+  - text: |-
+      At first, contact your supervisor by mail or by phone.
+
+      If you couldn't do this, then contact your friends and tell them to contact the respective supervisor ASAP and inform them the problem.
+
+      If possible, your supervisor will give you some time or another date.
+
+      In worst case, deregister the subject and try in next semester.
+  utter_seminar_withdraw:
+  - text: If you end the seminar in between without any valid reason, your score will be 5.0.
+  utter_ReportStillPending:
+  - text: If you are done with the presentation and did not submit the report within the given date, then you have to register again in next semester and start with a new topic!
+  utter_Seminar_Internship:
+  - text: |-
+      Yes, but you have to register in the allocated (external) group and prepare well.
+
+      There will be no exception if you cannot take part on the assigned appointment, because of your internship.
+  utter_enroll_filled:
+  - text: |-
+      Please write a mail to **ce-teaching@informatik.tu-chemnitz.de**, with the request.
+
+      But if the course registration is full, then it is full; New slots will not be provided!
+  utter_Repeat_Seminar:
+  - text: |-
+      You can/must repeat the Hauptseminar, if you end it with a mark 5.
+
+      But if you successfully ended the seminar, you can't repeat it to archive a better score!
+  utter_Attendance:
+  - text: |-
+      In general, you have to participate in all lessons in your group.
+
+      If you cant participate one time in this group, it is fine if you go to another lesson in the same week.
+
+      You are allowed to miss a majority of two lessons. However, the day of your presentation is fix, you should prepare to participate on this day in your group!
+  utter_Deregister:
+  - text: Write an email to **ce-teaching@informatik.tu-chemnitz.de**, with the request of deregistration.
+  utter_deadline:
+  - text: You will find the deadlines and all important dates in the OPAL Course at [Important Appointments](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/93389955959771).
+  utter_feedback:
+  - buttons:
+    - payload: feedback_ppt
+      title: Feedback on Presentation
+    - payload: feedback_report
+      title: Feedback on Report
+    text: Please specify in which area you need the feedback ?
+  utter_feedback_ppt1:
+  - text: |-
+      Did you use the correct template for the presentation? Check the template in university [site](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#templates).
+  utter_feedback_ppt2:
+  - text: Have you mentioned all the citations in your ppt and added all in the references slide?
+  utter_feedback_ppt3:
+  - text: Have you used the correct font style as per requirements in the [slides](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/85449464664381).
+  utter_feedback_ppt4:
+  - text: Are the dates (upto date) in your presentation slides same?
+  utter_feedback_ppt5:
+  - text: Are the page numbers in order?
+  utter_feedback_ppt6:
+  - text: Is your ppt free of spelling errors and grammar?
+  utter_feedback_ppt7:
+  - text: Is your points are short and limited (maximum 6 bullet points per slide) in the ppt ?
+  utter_feedback_ppt8:
+  - text: Is your ppt well organized and not congested ?
+  utter_feedback_ppt9:
+  - text: |-
+      Lastly, have you prepared for your presentation?
+
+      If your presentation exceeds the given time limit or less than that, then practice it again and prepare well to achieve a good score.
+
+      You can finish the presentation in minimum -1 or maximum +1 minutes of the given time period. I recommend to finish on time. Practice well for it.
+  utter_feedback_ppt_rectify:
+  - text: Then please rectify your mistake first and come back again for the feedback.
+  utter_feedback_ppt_end:
+  - text: |-
+      If you have successfully done the above requirements, then your presentation slides are good to go!
+
+      For more feedback suggestions, please discuss with your team members. Thank you!
+  utter_feedback_report1:
+  - text: |-
+      Did you follow the standard template for the report? Check the template in university [site](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#templates).
+      (Selecting the format Word or LaTex, completely depends on you)
+  utter_feedback_report2:
+  - text: Have you mentioned all the citations in your report and added all in the Bibilography?
+  utter_feedback_report3:
+  - text: Have you used the correct font style as per requirements in the [slides](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/85449464664381).
+  utter_feedback_report4:
+  - text: Is your submission date and other names correct in the title page?
+  utter_feedback_report5:
+  - text: Are the page numbers/table of contents or figures in order?
+  utter_feedback_report6:
+  - text: Is your report free of spelling errors and grammar?
+  utter_feedback_report7:
+  - text: Does your report contain less than 15% plagiarism?
+  utter_feedback_report8:
+  - text: |-
+      Lastly,
+
+      Have you checked well your report in an online plagiarism checker or a good plagiarism checker?
+      (It is better to be less than 10% or 0% in an online checker).
+  utter_feedback_report_rectify:
+  - text: Please rectify your mistake first and then come back again for the feedback.
+  utter_feedback_report_end:
+  - text: |-
+      If you have successfully done the above requirements, then your report is good to go!
+
+      For more feedback suggestions, please discuss with your team members. Thank you!
+  utter_language:
+  - text: I would like to chat in other languages, but for now I can only chat with you in English. Sorry !!!
+  utter_iamabot:
+  - text: I am a chatbot, powered by Rasa and created by Minta Jose & Sai Bhargavi.
+  utter_clear_ty:
+  - text: |-
+      Thank you for chatting with me.
+
+      It would be helpful, if you can share your feedback by sending a mail to **ce-teaching@informatik.tu-chemnitz.de** and suggest your team members to have a chat with me.
+
+      Bye Bye!
+  utter_goodbye:
+  - text: Bye, Take care ヽ(•‿•)ノ
+  utter_aboutbot:
+  - text: I am doing well. Thanks!
+  utter_complete_qn:
+  - text: Please complete your sentence properly or write down a full sentence. It will help me to understand you better.
+  utter_compliment_bot:
+  - text: |-
+      Aww! Thank you so much!
+
+      I want to improve more, if possible please help me by sending a feedback to the email **ce-teaching@informatik.tu-chemnitz.de**
+  utter_bot_feedback:
+  - text: |-
+      I am sorry! I want to improve, but i am not sure what i did wrong.
+
+      To help me, please send a feedback to the email **ce-teaching@informatik.tu-chemnitz.de**. Thank you!
+actions: []
+forms: {}
+e2e_actions: []

@@ -1,0 +1,317 @@
+version: "2.0"
+stories:
+- story: register subject in happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_registration
+  - intent: register_subject
+  - action: utter_register_subject
+- story: registered the subject in happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_registration
+  - intent: registered_subject
+  - action: utter_any_doubts
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+- story: Topic choosen path
+  steps:
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+  - intent: Topic_Related
+  - action: utter_topic
+  - intent: topic_choosen
+  - action: utter_topic_related
+  - intent: switch_topic
+  - action: utter_switch_topic
+  - intent: OwnTopic
+  - action: utter_OwnTopic
+  - intent: help_in_literature_survey
+  - action: utter_help_in_literature_survey
+  - intent: other_faq
+  - action: utter_other_doubts
+- story: Trouble choosing path
+  steps:
+  - intent: Topic_Related
+  - action: utter_topic
+  - intent: topic_not_choosen
+  - action: utter_choose_topic
+  - intent: trouble_to_choose
+  - action: utter_interest_test
+- story: No trouble choosing path
+  steps:
+  - intent: Topic_Related
+  - action: utter_topic
+  - intent: topic_not_choosen
+  - action: utter_choose_topic
+  - intent: no_trouble
+  - action: utter_no_trouble
+  - intent: trustworthy_sites
+  - action: utter_trustworthy_sites
+  - intent: Presentation
+  - action: utter_presentation
+  - intent: Report writing
+  - action: utter_report_writing
+  - intent: deadlines
+  - action: utter_deadline
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+- story: subject registered no doubts in happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_registration
+  - intent: registered_subject
+  - action: utter_any_doubts
+  - intent: no_more_doubts
+  - action: utter_clear_ty
+- story:  bot well path 1
+  steps:
+  - intent: aboutbot
+  - action: utter_aboutbot
+  - action: utter_registration
+  - intent: registered_subject
+  - action: utter_any_doubts
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+- story:  bot doing well path 2
+  steps:
+  - intent: aboutbot
+  - action: utter_aboutbot
+  - action: utter_registration
+  - intent: register_subject
+  - action: utter_register_subject
+- story: register subject in sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - action: utter_registration
+  - intent: register_subject
+  - action: utter_register_subject
+- story: registered the subject in sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - action: utter_registration
+  - intent: registered_subject
+  - action: utter_any_doubts
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+- story: subject registered no doubts in sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - action: utter_registration
+  - intent: registered_subject
+  - action: utter_any_doubts
+  - intent: no_more_doubts
+  - action: utter_clear_ty
+- story: thank you
+  steps:
+  - intent: thanks
+  - action: utter_any_more_doubts
+  - intent: no_more_doubts
+  - action: utter_clear_ty
+- story: thank you path 2
+  steps:
+  - intent: thanks
+  - action: utter_any_more_doubts
+  - intent: more_doubts
+  - action: utter_doubtful_areas
+- story: for any other questions
+  steps:
+  - intent: for_any_other_questions
+  - action: utter_discuss_with_team
+- story: literature survey
+  steps:
+  - intent: Literature_survey
+  - action: utter_literature_survey
+  - intent: purpose_of_literature_survey
+  - action: utter_purpose_of_literature_survey
+  - intent: help_in_literature_survey
+  - action: utter_help_in_literature_survey
+  - intent: trustworthy_sites
+  - action: utter_trustworthy_sites
+- story: Reference Citation
+  steps:
+  - intent: Reference Citation
+  - action: utter_reference
+  - intent: reference_necessary
+  - action: utter_reference_necessary
+  - intent: ref_citation_purpose
+  - action: utter_ref_citation_purpose
+  - intent: reference_format
+  - action: utter_reference_format
+  - intent: Forgot_citation
+  - action: utter_Forgot_citation
+  - intent: no_of_references
+  - action: utter_no_of_references
+- story: Presentation
+  steps:
+  - intent: Presentation
+  - action: utter_presentation
+  - intent: presentation_preparation
+  - action: utter_good_presentation
+  - intent: presentation_content
+  - action: utter_presentation_content
+  - intent: presentation_slot
+  - action: utter_presentation_slot
+  - intent: presentation_date
+  - action: utter_presentation_date
+  - intent: presentation_upload
+  - action: utter_presentation_upload
+  - intent: slides
+  - action: utter_slides
+  - intent: template
+  - action: utter_template
+  - intent: font
+  - action: utter_font
+  - intent: samples
+  - action: utter_samples
+  - intent: Spelling_errors
+  - action: utter_Spelling_errors
+- story: Report Writing
+  steps:
+  - intent: Report writing
+  - action: utter_report_writing
+  - intent: report_preparation
+  - action: utter_report_preparation
+  - intent: Report_contents
+  - action: utter_Report_contents
+  - intent: report_date
+  - action: utter_report_date
+  - intent: HowToSubmitReport
+  - action: utter_HowToSubmitReport
+  - intent: pages
+  - action: utter_pages
+  - intent: title_info
+  - action: utter_title_info
+  - intent: template
+  - action: utter_template
+  - intent: font
+  - action: utter_font
+  - intent: samples
+  - action: utter_samples
+  - intent: Spelling_errors
+  - action: utter_Spelling_errors
+- story: Other FAQs
+  steps:
+  - intent: other_faq
+  - action: utter_other_doubts
+  - intent: sick_ppt
+  - action: utter_sick
+  - intent: network_issue
+  - action: utter_contact_supervisor
+  - intent: seminar_withdraw
+  - action: utter_seminar_withdraw
+  - intent: ReportStillPending
+  - action: utter_ReportStillPending
+  - intent: Seminar_Internship
+  - action: utter_Seminar_Internship
+  - intent: enroll_filled
+  - action: utter_enroll_filled
+  - intent: Repeat_Seminar
+  - action: utter_Repeat_Seminar
+  - intent: Attendance
+  - action: utter_Attendance
+  - intent: Deregister
+  - action: utter_Deregister
+  - intent: None_of_these
+  - action: utter_post_your_question
+- story: presentation feedback 1
+  steps:
+  - intent: feedback
+  - action: utter_feedback
+  - intent: feedback_ppt
+  - action: utter_feedback_ppt1
+  - intent: affirm
+  - action: utter_feedback_ppt2
+  - intent: affirm
+  - action: utter_feedback_ppt3
+  - intent: affirm
+  - action: utter_feedback_ppt4
+  - intent: affirm
+  - action: utter_feedback_ppt5
+  - intent: affirm
+  - action: utter_feedback_ppt6
+  - intent: affirm
+  - action: utter_feedback_ppt7
+  - intent: affirm
+  - action: utter_feedback_ppt8
+  - intent: affirm
+  - action: utter_feedback_ppt9
+  - intent: affirm
+  - action: utter_feedback_ppt_end
+#  - intent: deny
+#  - action: utter_feedback_ppt_rectify
+- story: presentation feedback 2
+  steps:
+  - intent: feedback_ppt
+  - action: utter_feedback_ppt1
+  - intent: deny
+  - action: utter_feedback_ppt_rectify
+- story: report feedback 1
+  steps:
+  - intent: feedback
+  - action: utter_feedback
+  - intent: feedback_report
+  - action: utter_feedback_report1
+  - intent: affirm
+  - action: utter_feedback_report2
+  - intent: affirm
+  - action: utter_feedback_report3
+  - intent: affirm
+  - action: utter_feedback_report4
+  - intent: affirm
+  - action: utter_feedback_report5
+  - intent: affirm
+  - action: utter_feedback_report6
+  - intent: affirm
+  - action: utter_feedback_report7
+  - intent: affirm
+  - action: utter_feedback_report8
+  - intent: affirm
+  - action: utter_feedback_report_end
+#  - intent: deny
+#  - action: utter_feedback_ppt9
+- story: report feedback 2
+  steps:
+  - intent: feedback_report
+  - action: utter_feedback_report1
+  - intent: deny
+  - action: utter_feedback_report_rectify
+- story: incomplete path
+  steps:
+  - intent: incomplete_qn
+  - action: utter_complete_qn
+- story: Bot path 2
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: language
+  - action: utter_language
+  - intent: aboutbot
+  - action: utter_aboutbot
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: compliment_bot
+  - action: utter_compliment_bot
+  - intent: bot_feedback
+  - action: utter_bot_feedback

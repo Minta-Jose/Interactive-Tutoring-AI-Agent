@@ -1,0 +1,693 @@
+version: "2.0"
+nlu:
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - what is 2+2 ?
+    - who is the US president?
+    - my name
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+    - Hello
+    - ho
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - i am good
+    - i am good too
+    - not bad
+    - super
+    - am good
+    - good
+    - going well
+    - i am doing well
+    - i am okay
+    - going good
+    - everything is good
+    - gut
+    - well
+    - i am fine
+    - fine
+    - fine thanks
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - i am sad
+    - i am sick
+    - fever
+    - cold
+    - not so good
+    - not gut
+    - not okay
+- intent: more_doubts
+  examples: |
+    - more doubts
+    - more questions
+    - more query
+    - doubts in subject
+    - doubts in Hauptseminar
+    - some problems in hauptseminar suject
+    - help in the subject hauptseminar
+    - i have a doubt
+    - i have doubts
+    - a doubt
+    - need help
+    - some more doubts
+- intent: no_more_doubts
+  examples: |
+    - no doubts
+    - I don't have any doubts for now
+    - Everything is clear
+    - i dont have any doubts
+- intent: topic_not_choosen
+  examples: |
+    - topic not choosen
+    - I did not choose any topic
+    - I haven't
+    - not yet
+    - No, I haven't selected any topic
+- intent: topic_choosen
+  examples: |
+    - topic choosen
+    - already chose my topic
+    - choose the topic
+    - Yes, I already choose a topic
+    - I decided my topic
+- intent: Topic_Related
+  examples: |
+    - topic related
+    - seminar topic
+    - topic
+    - hauptseminar topic
+    - doubts in my topic
+    - i am facing some problem in my topic
+    - about my topic
+    - some doubts about my topic
+    - hauptseminar
+- intent: no_trouble
+  examples: |
+    - no trouble so far
+    - not really
+    - not at all
+    - other problem
+    - a different issue
+- intent: trouble_to_choose
+  examples: |
+    - trouble to choose
+    - trouble in choosing a topic for me
+    - problem in choosing the topic
+    - how to choose a topic?
+    - help me to choose a topic
+    - take a topic for me
+- intent: register_subject
+  examples: |
+    - register hauptseminar
+    - hauptseminar enrollment
+    - register for hauptseminar
+    - enroll for hauptseminar
+    - how to enrol for the subject
+    - enroll for the subject
+    - is it possible to register for the subject now
+    - register subject
+    - opal link for registering
+    - opal link for enroll
+- intent: registered_subject
+  examples: |
+    - i registered hauptseminar
+    - i enrolled the subject hauptseminar
+    - i did the enrollment
+- intent: switch_topic
+  examples: |
+    - switch topic
+    - How can I switch my topic?
+    - change my topic
+    - how to switch topic
+    - is it possible to change my topic
+    - change topic
+- intent: OwnTopic
+  examples: |
+    - own topic
+    - myown topic
+    - different topic
+    - another topic
+    - new topic
+    - create myown topic
+    - select a topic which is not in the topic list
+    - I am very interested in some actual scientific questions, is it possible to create an own topic?
+    - create myown topic for the seminar
+    - select a different topic which is not listed?
+    - take a new topic
+    - i dont like the listed topics. can i take a different topic?
+- intent: deadlines
+  examples: |
+    - important deadlines
+    - deadline of the enrollment
+    - deadline for the hauptseminar topic
+    - enrollment
+- intent: Literature_survey
+  examples: |
+    - literature survey
+    - doubts in literature survey
+    - i am facing some problem in literature survey
+    - a doubt in literature survey
+    - an issue in the literature survey
+- intent: purpose_of_literature_survey
+  examples: |
+    - purpose of literature Survey
+    - literature survey purpose
+    - literature survey aim
+    - necessicity of literature survey
+    - requireness of literature survey
+    - What is the purpose of the literature survey?
+    - why i have to do the literature survey?
+    - Is it necessary to do the literature survey?
+    - literature survey is necessary?
+    - purpose of literature survey
+    - what is the aim of the literature survey
+    - do i have to do the literature survey
+    - about literature survey
+- intent: help_in_literature_survey
+  examples: |
+    - help in literature survey
+    - support for literature survey
+    - I need some help with a literature survey.
+    - Can u help me with the literature survey
+    - help me in literature survey
+    - will i get any support for doing the literature survey
+- intent: trustworthy_sites
+  examples: |
+    - reference paper
+    - cites for references
+    - good journal
+    - sites are trustworthy?
+    - good journals
+    - good journals that are trustworthy?
+    - search for research papers
+    - reference papers
+    - find research papers that are trustworthy?
+    - reference papers website
+    - research papers sites
+    - trustworthy sites
+    - sites I can trust?
+    - which site I can trust?
+    - is there any particular sites to do the literature survey
+    - particular sites for journals
+    - particular sites for references
+    - accurate information
+    - sensible journals
+    - how to do the literature survey
+    - get a good journal
+    - find a good journal
+    - find references
+    - information regarding my topic
+    - sites to find literature survey
+- intent: Reference Citation
+  examples: |
+    - references
+    - doubts in references
+    - reference citation
+    - doubts in reference citation
+    - i am facing some problem in reference citation
+    - Reference Citation
+- intent: reference_format
+  examples: |
+    - reference style
+    - citing reference format
+    - Is there any formatting of reference?
+    - reference format
+    - any particular format for reference
+    - what is the reference format style
+- intent: Forgot_citation
+  examples: |
+    - copy citation
+    - what will i do when i forget to download the citation of the journal
+    - i cannot find my journals citation
+    - i forgot from where i downloaded the journal
+    - forget to copy the citation
+- intent: no_of_references
+  examples: |
+    - How many references should be included in the paper?
+    - any limit for the no of references
+    - total no of references
+    - no. of reference
+    - no of refs
+- intent: reference_necessary
+  examples: |
+    - Do I need to include reference?
+    - reference is necessary to add
+    - reference is mandatory
+    - references are needed
+    - do i have to put references in images?
+    - references in tables?
+    - references in text?
+- intent: ref_citation_purpose
+  examples: |
+    - reference citation purpose
+    - purpose of reference citation
+    - why we need reference citation
+    - what is the purpose of citing the reference in ppt or report
+    - why we need the reference citation
+    - why i need to put the references
+    - why i need to cite the references
+    - Bibilography is necessary to add
+    - Bibilography is needed?
+    - why i should include references to images, tables, text in ppt
+    - include references to images, tables, text in report
+    - cite references to images, tables, text in report
+    - cite references to images, tables, text in ppt
+    - why i should cite references in ppt
+- intent: Report writing
+  examples: |
+    - Report
+    - Report writing
+    - doubts in report writing
+    - i am facing some problem in report writing
+    - some doubts in my report
+    - some doubts in my report writing
+    - report writing
+- intent: report_preparation
+  examples: |
+    - report preparation
+    - What does a good report looks like?
+    - how to write a report
+    - How to write a good report
+    - steps to write a well organized report
+    - points to be noted for a good report
+    - any suggestion for writing a good report format
+    - help to write report
+    - points to keep in mind before writing report
+- intent: pages
+  examples: |
+    - How long has my report to be?
+    - number of pages for report
+    - how many pages are required for a report?
+    - how many pages are needed in report
+    - no. of pages for the report
+    - no of pages
+- intent: Report_contents
+  examples: |
+    - what are the contents included in a report
+    - main contents in a report
+    - report contents
+    - report format
+- intent: report_date
+  examples: |
+    - report submission date
+    - deadline of the report submission
+    - when should i submit my report
+    - time and date to submit my report
+    - Where do I find  the deadlines for submission?
+    - what is the last date to submit
+    - last day of report submission
+    - report date
+- intent: HowToSubmitReport
+  examples: |
+    - How do i have to submit the report?
+    - where to submit the report
+    - email id to send the report
+    - particular format of  sending a report
+    - report sending format
+    - submitting report
+    - procedure for submitting report
+- intent: title_info
+  examples: |
+    - title page
+    - title page information
+    - title page of the report
+    - What information should be placed on the title page?
+    - what all info should be included in title page
+- intent: Presentation
+  examples: |
+    - Presentation
+    - doubts in presentation
+    - i am facing some problem in presentation
+    - doubt in presentation
+    - presentation doubts
+- intent: presentation_preparation
+  examples: |
+    - good presentation
+    - How to make a good presentation
+    - some doubts in making good presentation
+    - Make good presentation
+    - How to make a good ppt
+- intent: presentation_content
+  examples: |
+    - outline of the presentation
+    - contents of presentation
+    - What are the contents in the presentation?
+    - contents of the presentations
+    - presentation contents
+    - what all points should in include in a ppt
+    - what all headings should write in ppt
+    - outline of a ppt
+- intent: presentation_slot
+  examples: |
+    - reserve a presentation slot?
+    - presentation slot
+    - how to receive presentation slot
+    - how to reserve the presentation slot
+    - can i take a presentation date
+- intent: presentation_date
+  examples: |
+    - date presentation
+    - when is my presentation
+    - When should i give my presentation
+    - my presentation date
+    - presentation time
+    - presentation date
+    - date of my presentation
+    - date and time of next presentation
+    - time of presentation
+- intent: presentation_upload
+  examples: |
+    - upload presentation
+    - submit my ppt
+    - submit my presentation
+    - where to upload my presentation
+    - where to upload my ppt
+    - my presentation submission
+    - presentation upload
+    - presentation submission date
+    - sending my ppt
+    - upload ppt
+- intent: slides
+  examples: |
+    - number of slides for ppt
+    - no of slides for the presentation
+    - no. of slides
+    - how many slides are needed in ppt
+    - how many slides are required for a ppt?
+- intent: other_faq
+  examples: |
+    - another doubt
+    - other doubts
+    - another problem
+- intent: thanks
+  examples: |
+    - Thank you
+    - thanks
+    - okay thanks
+    - thx
+    - okay thank you
+    - ok
+    - sure
+    - ok sure
+    - okay
+    - ok thx
+    - mmm
+    - hmm
+    - alryt
+    - alright
+    - cool
+- intent: for_any_other_questions
+  examples: |
+    - How to check my objective is clear?
+    - is my objective main_objective_clear
+    - I cant find calibiri font
+    - include the pros and cons in my report
+    - include advantages and disadvantages in the report
+- intent: template
+  examples: |
+    - presentation template
+    - report template
+    - where to find word format for the report
+    - where to download LaTex format for the report
+    - Can you please tell me the correct template for the presentation?
+    - tell me the correct template for presentation?
+    - Where can i find the correct template for presentation?
+    - Where do I find a template for presentation?
+    - where do i find the report template.
+    - Could you please tell me the correct template for the report?
+    - tell me the correct template for report?
+    - Where can i find the correct template for report?
+    - where to find the template
+    - word template
+    - latex template
+    - latex format zip file for report
+    - word format for report
+- intent: Spelling_errors
+  examples: |
+    - spelling mistakes are okay?
+    - grammar mistakes are ok?
+    - should my text free from spelling errors
+    - error free
+- intent: samples
+  examples: |
+    - sample report
+    - sample ppt
+    - where can i find the sample presentation?
+    - an example ppt
+- intent: font
+  examples: |
+    - correct font size?
+    - Is the same font used always?
+    - font style is used?
+    - Is there any size or shape for the image?
+    - size of headings?
+    - font sytle
+    - font size
+- intent: sick_ppt
+  examples: |
+    - What do I have to do, if I become ill at my presentation day?
+    - If i am sick on my presentation day or time
+    - what if i am sick and couldn't do my presentation
+    - should i send a medical certificate
+    - i am sick and can't attend the meeting
+    - i am sick and i cannot do the presentation
+    - cannot do the presentation today, i am not feeling well
+    - do i have to inform my supervisor if i am sick
+    - i cannot do the presentation today
+- intent: network_issue
+  examples: |
+    - what if my network has some issues just before doing my presentation
+    - faced some internet issues just before my online presentation
+    - what if I have network problem in between my presentation
+    - while doing my presentation If I have some interent problem what will I do?
+    - what if i couldn't attend the meeting because of my network issues
+- intent: seminar_withdraw
+  examples: |
+    - Is it possible to end the seminar during the semester?
+    - withdraw the seminar in between
+    - cancel the subject after registering.
+    - after enrollment can i cancel the hauptseminar subject
+    - cancel the seminar
+- intent: ReportStillPending
+  examples: |
+    - done my presentation already in the last semesters, but the report still misses. Can I just write the report now?
+    - i did not submit my report last semester, but i did the presentation
+    - i couldn't write my report
+    - i couldn't submit my report
+    - i couldnt write my report
+    - i didnt submit the report
+    - i did not write the report
+    - i failed to upload the report on the right time.
+    - falied to upload
+    - forgot to upload the report
+- intent: Seminar_Internship
+  examples: |
+    - seminar during internship
+    - Can I take part at the seminar during my internship?
+    - is it okay to do seminar during internship
+    - can i do the hauptseminar during my internship
+    - i am doing an internship, can i do the hauptseminar
+- intent: enroll_filled
+  examples: |
+    - enrollment is full
+    - couldnt enroll for the subject
+    - cannot register for the subject
+    - registration is full
+    - registration is closed
+    - What are the options to enroll for this course if the participation is already full?
+    - i am in waiting list
+- intent: Repeat_Seminar
+  examples: |
+    - I finished my Hauptseminar with an unsatisfied Mark, can I repeat the Hauptseminar again?
+    - Redo seminar again
+    - i failed in the hauptseminar
+    - repeat seminar
+    - less score in subject, can i repeat the subject ?
+- intent: Attendance
+  examples: |
+    - Attendance compulsory ?
+    - attend the class regularly?
+    - necessary to attend all classes?
+- intent: Deregister
+  examples: |
+    - deregister the Hauptseminar
+    - deregister before end of topic registration, but the registration is already closed, what can I do?
+    - deregister the subject
+    - how to deregister
+- intent: feedback
+  examples: |
+    - feedback
+    - I need feedback
+    - I need a review
+    - i need feedback
+    - can you please give me a feedback
+    - can i have feedback please
+    - i need a feedback
+    - feed back
+    - feedback
+- intent: feedback_ppt
+  examples: |
+    - feedback on presentation
+    - Feedback on Presentation
+    - feedback for my presentation slides
+    - ppt feedback
+    - ppt slides feedback
+    - I need feedback about my ppt.
+    - about my ppt
+    - review my ppt
+    - drawback of ppt
+    - check my ppt and give a feedback
+- intent: feedback_report
+  examples: |
+    - report feedback
+    - feedback on report
+    - need a feedback on my report
+    - please review about my report
+    - give me a feedback about my report
+    - I want some clarifications about my report
+    - review my report
+    - drawback of report
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - sure bye
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+- intent: aboutbot
+  examples: |
+    - How are you?
+    - hw r u
+    - how u doing
+    - are u okay
+    - how r u
+    - and you?
+    - n u?
+    - nd u
+    - and u
+    - u?
+    - you?
+- intent: language
+  examples: |
+    - Sprechen Sie Deutsch
+    - Do you speak Deutsch
+    - Do you speak any other languages
+    - do u talk other language
+    - wie gehts
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what is your name?
+    - who are you?
+- intent: compliment_bot
+  examples: |
+    - you are amazing
+    - i love you
+    - you are cute
+    - you know everything
+    - you are the best
+    - you are so sweet
+    - you are so great
+    - you are great
+    - you are lovely
+- intent: bot_feedback
+  examples: |
+    - you dont know anything
+    - you are so confusing
+    - i hate you
+    - bullshit
+    - shit
+    - stupid
+    - fool
+    - bad chatbot
+    - i dont like you
+    - you know nothing
+    - waste of time
+    - shut up
+    - get out
+    - useless
+    - unsatisfied
+    - not satisfied
+- intent: None_of_these
+  examples: |
+    - none of this
+    - i want to write my doubt
+    - my doubt is not listed
+- intent: incomplete_qn
+  examples: |
+    - can i have
+    - can i
+    - have i
+    - did i
+    - may be
+    - havent i
+    - please
+    - abcd
